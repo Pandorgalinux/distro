@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+     --architectures i386 \
+     --linux-flavours 686-pae \
+     --binary-images iso \
+     --mirror-bootstrap http://ftp.de.debian.org/debian/ \
+     --mirror-binary http://ftp.de.debian.org/debian/ \
+     --distribution stretch \
+     --archive-areas "main contrib non-free" \
+     "${@}"

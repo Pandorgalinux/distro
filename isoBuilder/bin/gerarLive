@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Generate the Pandorga Distro based using the DebianLive system.
+
+cd $(dirname "${0}")
+cd ../PandorgaLinux
+
+lb clean
+lb config
+lb build
