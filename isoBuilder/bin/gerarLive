@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# Generate the Pandorga Distro based using the DebianLive system.
+# Generate the Pandorga Distro based using the live-wrapper.
 
 cd $(dirname "${0}")
 cd ../PandorgaLinux
 
-lb clean
-lb config
-lb build
+export TMP='/opt/tmp'
+lwr \
+        --description "Pandorga GNU/Linux 6.01" \
+	--image_output "pandorga-6.iso" \
+        -t "live-task-mate" \
+        --installer \
