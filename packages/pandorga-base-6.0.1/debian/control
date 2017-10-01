@@ -1,0 +1,14 @@
+Source: pandorga-base
+Section: unknown
+Priority: optional
+Maintainer: Pandorga GNU/Linux Team <distro@pandorgalinux.com.br>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: http://pandorgalinux.com.br
+Vcs-Git: https://github.com/Pandorgalinux/distro.git
+
+Package: pandorga-base
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Pandorga GNU/Linux Base Meta-Package
+ Base Package to install the Pandorga GNU/Linux Educational Distribution.
