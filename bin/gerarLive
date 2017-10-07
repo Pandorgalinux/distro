@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Generate the Pandorga Distro based using the live-wrapper.
+
+cd $(dirname "${0}")
+cd ../PandorgaLinux
+
+export TMP='/opt/tmp'
+
+#Estas variáveis são usadas no script customizado do Pandorga (hooks/customise.sh):
+
+  #Repositório do Pandorga, a versão será baseada no parâmetro -d:
+  export LWR_PANDORGA_MIRROR='http://maguis.de/deb/'
+  #Os logs de hooks/customise.sh não são salvos por padrão, defina aqui onde será salvo:
+  export LWR_PANDORGA_LOG="$(pwd)/pandorga.log"
+  #Dentro do chroot não se pode acessar nenhum diretório do sistema, então, todo o hooks 
+  #será copiado para um diretório temporário no chroot, que pode ser usado para qualquer 
+  #script ou propósito dento da distro:
+  export LWR_PANDORGA_HOOKS="$(pwd)/hooks/"
+
+  #Pacotes que serão instalados através do repositório do Pandorga:
+  export LWR_PANDORGA_PACKAGES="pandorga-base"
+
+
+lwr \
+        --description "Pandorga GNU/Linux 6.01" \
+	--image_output "pandorga-6.iso" \
+	-d "stable" \
+        --installer \
+	--grub \
+
+cat $LWR_PANDORGA_LOG 
+        #-t "live-task-mate" \

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Clean the Pandorga Distro directory.
+
+cd $(dirname "${0}")
+cd ../PandorgaLinux
+
+rm -f pandorga-6.iso 
+rm -Rf /opt/tmp/*
