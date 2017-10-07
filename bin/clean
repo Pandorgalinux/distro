@@ -5,5 +5,5 @@
 cd $(dirname "${0}")
 cd ../PandorgaLinux
 
-rm -f pandorga-6.iso 
+rm -f *.iso 
 rm -Rf /opt/tmp/*

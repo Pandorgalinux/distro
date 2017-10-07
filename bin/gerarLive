@@ -23,8 +23,8 @@ export TMP='/opt/tmp'
 
 
 lwr \
-        --description "Pandorga GNU/Linux 6.01" \
-	--image_output "pandorga-6.iso" \
+        --description "Pandorga GNU/Linux 9.01" \
+	--image_output "pandorga-dev.iso" \
 	-d "stable" \
         --installer \
 	--grub \
