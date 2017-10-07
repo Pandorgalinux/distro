@@ -22,15 +22,12 @@ export TMP='/opt/tmp'
   export LWR_PANDORGA_PACKAGES="pandorga-base"
 
 
-  export LWR_TASK_PACKAGES="live-task-mate task-brazilian-portuguese"
-
-
 lwr \
         --description "Pandorga GNU/Linux 9.01" \
 	--image_output "pandorga-dev.iso" \
 	-d "stable" \
         --installer \
 	--grub \
+        -t "live-task-mate task-brazilian-portuguese" \
 
 cat $LWR_PANDORGA_LOG 
-        #-t "live-task-mate" \
