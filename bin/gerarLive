@@ -19,7 +19,7 @@ export TMP='/opt/tmp'
   export LWR_PANDORGA_HOOKS="$(pwd)/hooks/"
 
   #Pacotes que serão instalados através do repositório do Pandorga:
-  export LWR_PANDORGA_PACKAGES="pandorga-base"
+  export LWR_PANDORGA_PACKAGES="pandorga-base pandorga-config-mate"
 
 
 lwr \
