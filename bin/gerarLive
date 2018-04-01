@@ -7,6 +7,9 @@ cd ../PandorgaLinux
 
 export TMP='/opt/tmp'
 
+#O primeiro parâmetro do script é a versao a ser criada ou "stable" se nao houer parâmetros:
+DISTRO="${1:-stable}"
+
 #Estas variáveis são usadas no script customizado do Pandorga (hooks/customise.sh):
 
   #Repositório do Pandorga, a versão será baseada no parâmetro -d:
@@ -19,13 +22,13 @@ export TMP='/opt/tmp'
   export LWR_PANDORGA_HOOKS="$(pwd)/hooks/"
 
   #Pacotes que serão instalados através do repositório do Pandorga:
-  export LWR_PANDORGA_PACKAGES="pandorga-base pandorga-config-mate"
+  export LWR_PANDORGA_PACKAGES="pandorga-base pandorga-config-mate pandorga-users-iniciais"
 
 
 lwr \
         --description "Pandorga GNU/Linux 9.01" \
 	--image_output "pandorga-dev.iso" \
-	-d "stable" \
+	-d $DISTRO \
         --installer \
 	--grub \
         -t "live-task-mate task-brazilian-portuguese" \
